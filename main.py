@@ -40,10 +40,6 @@ def get_page_data(text, url):
             title = False
 
 
-
-#sdsdsd
-
-
         try:
             desc = str(root_element.xpath("//meta[@name='description']/@content/text()"))
         except:
