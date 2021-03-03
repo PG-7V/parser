@@ -91,7 +91,7 @@ def make_all(url):
 
 
 def main():
-    fds = open(file_for_read, 'r', encoding='utf-8')
+    fds = open('file_for_read.csv', 'r', encoding='utf-8')
 
     urls = []
     for line in fds:
