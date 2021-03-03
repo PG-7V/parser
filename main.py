@@ -34,19 +34,19 @@ def get_page_data(text, url):
     try:
         root_element = lxml.html.fromstring(text)
         try:
-            title = over_in(str(root_element.xpath("//title/text()")))
+            title = str(root_element.xpath("//title/text()"))
             # TODO: only title, description, mail and phone
         except:
             title = False
 
         try:
-            desc = over_in(str(root_element.xpath("//meta[@name='description']/@content/text()")))
+            desc = str(root_element.xpath("//meta[@name='description']/@content/text()"))
         except:
             desc = False
 
         if title and desc:
             try:
-                h1 = over_in(str(root_element.xpath("//h1/text()")))
+                h1 = str(root_element.xpath("//h1/text()"))
             except:
                 h1 = ''
 
