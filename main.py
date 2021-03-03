@@ -23,11 +23,11 @@ def get_html(url):
         return None
 
 
-def writer_csv(data):
+def writer_csv(**kwargs):
     with open(file_output, 'a') as file:
         order = ['url', 'title', 'desc',]
         writer = csv.DictWriter(file, delimiter=';', fieldnames=order)
-        writer.writerow(data)
+        writer.writerow(**kwargs)
 
 def get_page_data(text, url):
 
@@ -78,7 +78,7 @@ def get_page_data(text, url):
                 'mail': mail,
                 'tel': tel,
                 }
-            writer_csv(data)
+            writer_csv(**data)
 
     except:
         return None
