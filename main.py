@@ -45,6 +45,8 @@ def get_page_data(text, url):
         except:
             desc = False
 
+
+
         if title and desc:
             try:
                 h1 = str(root_element.xpath("//h1/text()"))
